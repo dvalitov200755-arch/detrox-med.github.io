@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя компания - Каталог товаров</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка с логотипом и контактами -->
+    <header>
+        <div class="logo">МОЯ КОМПАНИЯ</div>
+        <div class="contacts">
+            <div class="contact-item">
+                📞 +7 (999) 123-45-67
+            </div>
+            <div class="contact-item">
+                ✉️ info@mycompany.ru
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="navigation">
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="home">Главная</a>
+            <a href="#" class="nav-link" data-page="catalog">Каталог</a>
+            <a href="#" class="nav-link" data-page="cart">Корзина</a>
+        </div>
+    </nav>
+
+    <!-- Главная страница -->
+    <div id="home" class="page active-page">
+        <div class="hero">
+            <h1>Добро пожаловать в нашу компанию</h1>
+            <p>Мы предлагаем лучшие решения для вашего бизнеса</p>
+        </div>
+
+        <h2 class="section-title">Наши преимущества</h2>
+        
+        <div class="advantages">
+            <div class="advantage-card">
+                <div class="advantage-icon">🚀</div>
+                <h3>Быстрая доставка</h3>
+                <p>Доставляем заказы в течение 24 часов по всему городу</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">💎</div>
+                <h3>Высокое качество</h3>
+                <p>Используем только сертифицированные материалы</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">💰</div>
+                <h3>Лучшие цены</h3>
+                <p>Гарантируем самые низкие цены на рынке</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">🔧</div>
+                <h3>Поддержка 24/7</h3>
+                <p>Круглосуточная техническая поддержка</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">📦</div>
+                <h3>Гарантия 5 лет</h3>
+                <p>На всю продукцию</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">🤝</div>
+                <h3>Индивидуальный подход</h3>
+                <p>Решения под ваши задачи</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Страница каталога -->
+    <div id="catalog" class="page">
+        <div class="catalog-header">
+            <h1>Каталог товаров</h1>
+            <div class="cart-info" onclick="switchPage('cart')">
+                🛒 Корзина: <span id="cart-count">0</span> товаров
+            </div>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Товары будут добавлены через JavaScript -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- Пагинация будет добавлена через JavaScript -->
+        </div>
+    </div>
+
+    <!-- Страница корзины -->
+    <div id="cart" class="page">
+        <h1 class="section-title">Корзина</h1>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Товары в корзине будут отображаться здесь -->
+        </div>
+
+        <div class="order-form">
+            <h2>Оформить заявку</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="company">Название компании</label>
+                    <input type="text" id="company" required placeholder="ООО 'Моя компания'">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="company@mail.ru">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" required placeholder="+7 (999) 123-45-67">
+                </div>
+                <button type="submit" class="submit-order">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно товара -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-product-image" id="modal-image">📦</div>
+            <h2 class="modal-product-name" id="modal-name">Название товара</h2>
+            <div class="modal-product-price" id="modal-price">1000 ₽</div>
+            
+            <div class="modal-product-specs">
+                <h4>Характеристики:</h4>
+                <ul id="modal-specs"></ul>
+            </div>
+            
+            <div class="modal-product-description" id="modal-description"></div>
+            
+            <button class="add-to-cart-btn" onclick="addToCartFromModal()">Добавить в корзину</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
