@@ -1,1 +1,0 @@
-# detrox-med.github.io
